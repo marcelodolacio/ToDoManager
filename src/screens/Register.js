@@ -22,9 +22,9 @@ render() {
         <Text style={styles.title}>Registering new user</Text> 
     </View>
     <View style={styles.bottomView}> 
-        <TextInput style={styles.input} placeholder='Email' keyboardType={'email-address'} autoCapitalize='none' onChangeText={email => {this.setState({ email }) }} />
-        <TextInput style={styles.input} placeholder='Password' secureTextEntry={true} onChangeText={password => this.setState({ password })} />
-        <Button title='Register User' onPress={() => {Alert.alert(`Email: ${this.state.email}\n Password:${this.state.password}`)}} />
+        <TextInput style={styles.input} placeholder='Email' keyboardType={'email-address'} autoCapitalize='none' onChangeText={email => {this.setState({ email }) }}/>
+        <TextInput style={styles.input} placeholder='Password' secureTextEntry={true} onChangeText={password => this.setState({ password })}/>
+        <Button title='Register User' onPress={() => {Alert.alert(`Email: ${this.state.email}\n Password:${this.state.password}`)}}/>
     </View> 
     </KeyboardAvoidingView>
     // </SafeAreaView> 

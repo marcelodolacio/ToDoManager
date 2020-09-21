@@ -21,19 +21,15 @@ import {
             {/* <Image style={styles.img} source={img} /> */}
             </View>
             <View style={styles.bottomView}>
-            ...
-            <Button
-            title="Sign In"
-            onPress={() => Alert.alert(`Email: ${email} \nPassword: ${password}`)}
-            />
+            <TextInput style={styles.input} placeholder="Email" keyboardType={'email-address'} autoCapitalize="none"/>
+            <TextInput style={styles.input} placeholder="Password" secureTextEntry={true}/>
+            <Button title="Sign In" onPress={() => Alert.alert(`Email: ${email} \nPassword: ${password}`)}/>
             <View style={styles.textConteiner}>
-            <Text>Not a member? Let's </Text> <Text
-            style={styles.textRegister} onPress={() => {
-            props.navigation.navigate('Register'); }}>
-            Register
-                      </Text>
-                    </View>
-            </View> </KeyboardAvoidingView>
+            <Text>Not a member? Let's </Text> 
+            <Text style={styles.textRegister} onPress={() => {props.navigation.navigate('Register'); }}>Register</Text>
+            </View>
+            </View> 
+            </KeyboardAvoidingView>
         );
     };
 
