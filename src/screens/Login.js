@@ -11,6 +11,7 @@ import {
       Alert,
     } from 'react-native';
 import { signInOnFirebaseAsync } from '../services/FirebaseApi';
+import {CommonActions} from '@react-navigation/native';
 
 export default class Login extends Component {
 
@@ -27,6 +28,12 @@ export default class Login extends Component {
         try {
             const user = await signInOnFirebaseAsync(this.state.email, this.state.password);
             Alert.alert("User Authenticated",`User ${user.email} has succesfuly been authenticated!`);
+            this.props.navigation.dispatch(
+                CommonActions.reset({
+                index: 0,
+                routes: [{name: 'TaskList'}],
+                }), 
+            );
         } catch (error) {
             Alert.alert("Login Failed", error.message); 
         }
