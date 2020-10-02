@@ -1,22 +1,22 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {AppRegistry, SafeAreaView} from 'react-native'; 
+import { AppRegistry, SafeAreaView } from 'react-native';
 import Routes from './src/routes/Routes';
-import {name as appName} from './app.json';
-import {NavigationContainer} from '@react-navigation/native';
+import { name as appName } from './app.json';
+import { NavigationContainer } from '@react-navigation/native';
 import { initializeFirebaseApi } from './src/services/FirebaseApi';
 
-const wrappedRoutes = () => { 
+const wrappedRoutes = () => {
     return (
-        <NavigationContainer> 
-            <SafeAreaView style={{flex: 1}}>
-                 <Routes/> 
+        <NavigationContainer>
+            <SafeAreaView style={{ flex: 1 }}>
+                <Routes />
             </SafeAreaView>
-        </NavigationContainer> 
+        </NavigationContainer>
     );
 };
 
-AppRegistry.registerComponent(appName, () => wrappedRoutes);
+//AppRegistry.registerComponent(appName, () => wrappedRoutes); 
 
 AppRegistry.registerComponent(appName, () => {
     initializeFirebaseApi();
