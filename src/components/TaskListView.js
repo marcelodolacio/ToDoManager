@@ -18,7 +18,7 @@ export default class TaskListView extends Component {
 
     _renderItem(itemData) {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this._onClickTask(itemData.item)}>
                 <View style={styles.itemConteiner}>
                     <Text style={styles.itemTextTitle}>{itemData.item.title}</Text>
                     <Text>{itemData.item.resume}</Text>
@@ -26,6 +26,11 @@ export default class TaskListView extends Component {
             </TouchableOpacity>
         );
     }
+    _onClickTask(task) {
+        const { navigate } = this.props.navigation;
+        navigate('Task', { task });
+    }
+
     render() {
         return (
             // <SectionList renderSectionHeader={(section) => this.renderSectionHeader(section)}

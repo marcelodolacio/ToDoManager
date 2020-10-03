@@ -5,9 +5,16 @@ import { readTasksFromFirebaseAsync } from '../services/FirebaseApi';
 //import { navigate } from 'react-navigation';
 
 const imgPlus = require('../assets/plus.png');
+const imgCheckList = require('../assets/plus.png');
 
 
 export default class ToDoTasks extends Component {
+
+    static navigationOptions = {
+        tabBarLabel: 'To Do', tabBarIcon: ({ tintColor }) => (
+            <Image source={imgCheckList} style={[styles.icon, { tintColor }]} />
+        )
+    }
 
     state = {
         tasks: [],
@@ -29,7 +36,8 @@ export default class ToDoTasks extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TaskListView tasks={this.state.tasks} />
+                <TaskListView tasks={this.state.tasks}
+                    navigation={this.props.navigation} />
                 <TouchableOpacity style={styles.floatButton} onPress={() => this._goToTask()}>
                     <Image source={imgPlus} style={styles.img} />
                 </TouchableOpacity>
@@ -40,7 +48,7 @@ export default class ToDoTasks extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column',
+        // flexDirection: 'column',
         paddingLeft: 10,
         paddingRight: 10,
     },
@@ -52,4 +60,9 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
     },
+    floatButton: {
+        position: 'absolute',
+        right: 20,
+        bottom: 20
+    }
 });
