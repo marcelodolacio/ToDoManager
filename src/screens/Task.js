@@ -21,7 +21,7 @@ export default class Task extends Component {
         super(props);
 
         try {
-            const task = this.props.navigation.state.params.task;
+            const task = this.props.route.params.task;
             this.state = {
                 key: task.key,
                 title: task.title,
