@@ -4,8 +4,8 @@ import { TaskListView } from '../components/Components';
 import { readTasksFromFirebaseAsync } from '../services/FirebaseApi';
 //import { navigate } from 'react-navigation';
 
-const imgPlus = require('../assets/plus.png');
-const imgCheckList = require('../assets/plus.png');
+const imgPlus = require('../assets/plus.jpeg');
+const imgCheckList = require('../assets/plus.jpeg');
 
 
 export default class ToDoTasks extends Component {

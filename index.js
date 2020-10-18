@@ -18,7 +18,7 @@ const wrappedRoutes = () => {
 
 //AppRegistry.registerComponent(appName, () => wrappedRoutes); 
 
-AppRegistry.registerComponent(appName, () => {
+AppRegistry.registerComponent('ToDoManager', () => {
     initializeFirebaseApi();
     return wrappedRoutes;
 });

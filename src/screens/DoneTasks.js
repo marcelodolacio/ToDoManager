@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 import { TaskListView } from '../components/Components';
 import { readTasksFromFirebaseAsync } from '../services/FirebaseApi';
 
-const imgDone = require('../assets/plus.png');
+const imgDone = require('../assets/plus.jpeg');
 
 export default class DoneTasks extends Component {
 
